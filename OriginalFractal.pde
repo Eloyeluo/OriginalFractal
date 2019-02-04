@@ -2,25 +2,18 @@ public void setup(){
 	size(500, 500);
 }
 public void draw(){
-	originalBackground(250,250,1000);
-}
-public void originalBackground(int x, int y, int size){
-	int randomInt = (int)(Math.random()*100) - 50;
-	if(size <= 1){
-		fill(0,100,0);
-		ellipse(x,y,size,size);
-	}
-	else{
-		fill(300,300,300);
-		originalBackground(x + randomInt, y + randomInt, size/2);
-		originalBackground(x - randomInt, y + randomInt, size/2);
-	}
+	design(250,250, 500);
 }
 public void design(int x, int y, int size){
-	if(){
-
+	int k = (int)(Math.random()*200);
+	if(size <= 0){
+		fill(100 + k, 100 + k, 100 + k);
+		rect(x, y, 50, 50);
 	}
 	else{
-
+		design(x + size/2 , y, size/ 2);
+		design(x , y + size/2, size/ 2);
+		design(x - size/2, y, size/ 2);
+		design(x , y - size/2, size/ 2);
 	}
 }
